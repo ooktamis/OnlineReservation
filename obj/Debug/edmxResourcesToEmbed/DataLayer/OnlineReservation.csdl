@@ -1,0 +1,590 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OnlineReservation.Web" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="novartz_stajyer1Entities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="SP_GetFirmDepartmentMemberReservationHour" ReturnType="Collection(OnlineReservation.Web.SP_GetFirmDepartmentMemberReservationHour_Result)">
+      <Parameter Name="FIRMID" Mode="In" Type="Guid" />
+      <Parameter Name="DATE" Mode="In" Type="DateTime" />
+      <Parameter Name="FIRMDEPARTMENTMEMBERID" Mode="In" Type="Guid" />
+    </FunctionImport>
+    <EntitySet Name="CITY" EntityType="OnlineReservation.Web.CITY" />
+    <EntitySet Name="CITYDISTRICT" EntityType="OnlineReservation.Web.CITYDISTRICT" />
+    <EntitySet Name="FIRM" EntityType="OnlineReservation.Web.FIRM" />
+    <EntitySet Name="FIRMBRANCH" EntityType="OnlineReservation.Web.FIRMBRANCH" />
+    <EntitySet Name="FIRMDEPARTMENT" EntityType="OnlineReservation.Web.FIRMDEPARTMENT" />
+    <EntitySet Name="FIRMDEPARTMENTMEMBER" EntityType="OnlineReservation.Web.FIRMDEPARTMENTMEMBER" />
+    <EntitySet Name="FIRMRESPONSIBLE" EntityType="OnlineReservation.Web.FIRMRESPONSIBLE" />
+    <EntitySet Name="MEMBER" EntityType="OnlineReservation.Web.MEMBER" />
+    <EntitySet Name="RESERVATION" EntityType="OnlineReservation.Web.RESERVATION" />
+    <EntitySet Name="TYPEMEMBER" EntityType="OnlineReservation.Web.TYPEMEMBER" />
+    <EntitySet Name="TYPERESERVATIONSTATUS" EntityType="OnlineReservation.Web.TYPERESERVATIONSTATUS" />
+    <EntitySet Name="TYPESEKTOR" EntityType="OnlineReservation.Web.TYPESEKTOR" />
+    <EntitySet Name="VW_FIRM" EntityType="OnlineReservation.Web.VW_FIRM" />
+    <EntitySet Name="VW_FIRMBRANCH" EntityType="OnlineReservation.Web.VW_FIRMBRANCH" />
+    <EntitySet Name="VW_FIRMDEPARTMENT" EntityType="OnlineReservation.Web.VW_FIRMDEPARTMENT" />
+    <EntitySet Name="VW_FIRMDEPARTMENTMEMBER" EntityType="OnlineReservation.Web.VW_FIRMDEPARTMENTMEMBER" />
+    <EntitySet Name="VW_FIRMRESPONSIBLE" EntityType="OnlineReservation.Web.VW_FIRMRESPONSIBLE" />
+    <EntitySet Name="VW_MEMBER" EntityType="OnlineReservation.Web.VW_MEMBER" />
+    <AssociationSet Name="FK_CITYDISTRICT_CITY" Association="OnlineReservation.Web.FK_CITYDISTRICT_CITY">
+      <End Role="CITY" EntitySet="CITY" />
+      <End Role="CITYDISTRICT" EntitySet="CITYDISTRICT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FIRM_CITY" Association="OnlineReservation.Web.FK_FIRM_CITY">
+      <End Role="CITY" EntitySet="CITY" />
+      <End Role="FIRM" EntitySet="FIRM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FIRMBRANCH_CITY" Association="OnlineReservation.Web.FK_FIRMBRANCH_CITY">
+      <End Role="CITY" EntitySet="CITY" />
+      <End Role="FIRMBRANCH" EntitySet="FIRMBRANCH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FIRM_CITYDISTRICT" Association="OnlineReservation.Web.FK_FIRM_CITYDISTRICT">
+      <End Role="CITYDISTRICT" EntitySet="CITYDISTRICT" />
+      <End Role="FIRM" EntitySet="FIRM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FIRMBRANCH_CITYDISTRICT" Association="OnlineReservation.Web.FK_FIRMBRANCH_CITYDISTRICT">
+      <End Role="CITYDISTRICT" EntitySet="CITYDISTRICT" />
+      <End Role="FIRMBRANCH" EntitySet="FIRMBRANCH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FIRM_TYPESEKTOR" Association="OnlineReservation.Web.FK_FIRM_TYPESEKTOR">
+      <End Role="TYPESEKTOR" EntitySet="TYPESEKTOR" />
+      <End Role="FIRM" EntitySet="FIRM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FIRMBRANCH_FIRM" Association="OnlineReservation.Web.FK_FIRMBRANCH_FIRM">
+      <End Role="FIRM" EntitySet="FIRM" />
+      <End Role="FIRMBRANCH" EntitySet="FIRMBRANCH" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FIRMDEPARTMENT_FIRM" Association="OnlineReservation.Web.FK_FIRMDEPARTMENT_FIRM">
+      <End Role="FIRM" EntitySet="FIRM" />
+      <End Role="FIRMDEPARTMENT" EntitySet="FIRMDEPARTMENT" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FIRMRESPONSIBLE_FIRM" Association="OnlineReservation.Web.FK_FIRMRESPONSIBLE_FIRM">
+      <End Role="FIRM" EntitySet="FIRM" />
+      <End Role="FIRMRESPONSIBLE" EntitySet="FIRMRESPONSIBLE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FIRMDEPARTMENTMEMBER_FIRMDEPARTMENT" Association="OnlineReservation.Web.FK_FIRMDEPARTMENTMEMBER_FIRMDEPARTMENT">
+      <End Role="FIRMDEPARTMENT" EntitySet="FIRMDEPARTMENT" />
+      <End Role="FIRMDEPARTMENTMEMBER" EntitySet="FIRMDEPARTMENTMEMBER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FIRMDEPARTMENTMEMBER_MEMBER" Association="OnlineReservation.Web.FK_FIRMDEPARTMENTMEMBER_MEMBER">
+      <End Role="MEMBER" EntitySet="MEMBER" />
+      <End Role="FIRMDEPARTMENTMEMBER" EntitySet="FIRMDEPARTMENTMEMBER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RESERVATION_FIRMDEPARTMENTMEMBER" Association="OnlineReservation.Web.FK_RESERVATION_FIRMDEPARTMENTMEMBER">
+      <End Role="FIRMDEPARTMENTMEMBER" EntitySet="FIRMDEPARTMENTMEMBER" />
+      <End Role="RESERVATION" EntitySet="RESERVATION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FIRMRESPONSIBLE_MEMBER" Association="OnlineReservation.Web.FK_FIRMRESPONSIBLE_MEMBER">
+      <End Role="MEMBER" EntitySet="MEMBER" />
+      <End Role="FIRMRESPONSIBLE" EntitySet="FIRMRESPONSIBLE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MEMBER_TYPEMEMBER" Association="OnlineReservation.Web.FK_MEMBER_TYPEMEMBER">
+      <End Role="TYPEMEMBER" EntitySet="TYPEMEMBER" />
+      <End Role="MEMBER" EntitySet="MEMBER" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RESERVATION_TYPERESERVATIONSTATUS" Association="OnlineReservation.Web.FK_RESERVATION_TYPERESERVATIONSTATUS">
+      <End Role="TYPERESERVATIONSTATUS" EntitySet="TYPERESERVATIONSTATUS" />
+      <End Role="RESERVATION" EntitySet="RESERVATION" />
+    </AssociationSet>
+  </EntityContainer>
+  <ComplexType Name="SP_GetFirmDepartmentMemberReservationHour_Result">
+    <Property Type="DateTime" Name="DATE" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="HASRESERVATION" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="CITY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Byte" Nullable="false" />
+    <Property Name="NAME" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CITYDISTRICT" Relationship="OnlineReservation.Web.FK_CITYDISTRICT_CITY" FromRole="CITY" ToRole="CITYDISTRICT" />
+    <NavigationProperty Name="FIRM" Relationship="OnlineReservation.Web.FK_FIRM_CITY" FromRole="CITY" ToRole="FIRM" />
+    <NavigationProperty Name="FIRMBRANCH" Relationship="OnlineReservation.Web.FK_FIRMBRANCH_CITY" FromRole="CITY" ToRole="FIRMBRANCH" />
+  </EntityType>
+  <EntityType Name="CITYDISTRICT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int16" Nullable="false" />
+    <Property Name="CITYID" Type="Byte" Nullable="false" />
+    <Property Name="NAME" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CITY" Relationship="OnlineReservation.Web.FK_CITYDISTRICT_CITY" FromRole="CITYDISTRICT" ToRole="CITY" />
+    <NavigationProperty Name="FIRM" Relationship="OnlineReservation.Web.FK_FIRM_CITYDISTRICT" FromRole="CITYDISTRICT" ToRole="FIRM" />
+    <NavigationProperty Name="FIRMBRANCH" Relationship="OnlineReservation.Web.FK_FIRMBRANCH_CITYDISTRICT" FromRole="CITYDISTRICT" ToRole="FIRMBRANCH" />
+  </EntityType>
+  <EntityType Name="FIRM">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="TYPESEKTORID" Type="Byte" Nullable="false" />
+    <Property Name="NAME" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CITYID" Type="Byte" />
+    <Property Name="CITYDISTRICTID" Type="Int16" />
+    <Property Name="ADRESS" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PHONE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MONDAYRESERVATIONDURATION" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="MONDAYSTARTDATE" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="MONDAYENDDATE" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="TUESDAYRESERVATIONDURATION" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="TUESDAYSTARTDATE" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="TUESDAYENDDATE" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="WEDNESDAYRESERVATIONDURATION" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="WEDNESDAYSTARTDATE" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="WEDNESDAYENDDATE" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="THURSDAYRESERVATIONDURATION" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="THURSDAYSTARTDATE" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="THURSDAYENDDATE" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="FRIDAYRESERVATIONDURATION" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="FRIDAYSTARTDATE" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="FRIDAYENDDATE" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="SATURDAYRESERVATIONDURATION" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="SATURDAYSTARTDATE" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="SATURDAYENDDATE" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="SUNDAYRESERVATIONDURATION" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="SUNDAYSTARTDATE" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="SUNDAYENDDATE" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="RESERVATIONDURATION" Type="Decimal" Precision="4" Scale="2" />
+    <NavigationProperty Name="CITY" Relationship="OnlineReservation.Web.FK_FIRM_CITY" FromRole="FIRM" ToRole="CITY" />
+    <NavigationProperty Name="CITYDISTRICT" Relationship="OnlineReservation.Web.FK_FIRM_CITYDISTRICT" FromRole="FIRM" ToRole="CITYDISTRICT" />
+    <NavigationProperty Name="TYPESEKTOR" Relationship="OnlineReservation.Web.FK_FIRM_TYPESEKTOR" FromRole="FIRM" ToRole="TYPESEKTOR" />
+    <NavigationProperty Name="FIRMBRANCH" Relationship="OnlineReservation.Web.FK_FIRMBRANCH_FIRM" FromRole="FIRM" ToRole="FIRMBRANCH" />
+    <NavigationProperty Name="FIRMDEPARTMENT" Relationship="OnlineReservation.Web.FK_FIRMDEPARTMENT_FIRM" FromRole="FIRM" ToRole="FIRMDEPARTMENT" />
+    <NavigationProperty Name="FIRMRESPONSIBLE" Relationship="OnlineReservation.Web.FK_FIRMRESPONSIBLE_FIRM" FromRole="FIRM" ToRole="FIRMRESPONSIBLE" />
+  </EntityType>
+  <EntityType Name="FIRMBRANCH">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="FIRMID" Type="Guid" Nullable="false" />
+    <Property Name="NAME" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="CITYID" Type="Byte" />
+    <Property Name="CITYDISTRICTID" Type="Int16" />
+    <Property Name="ADRESS" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PHONE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CITY" Relationship="OnlineReservation.Web.FK_FIRMBRANCH_CITY" FromRole="FIRMBRANCH" ToRole="CITY" />
+    <NavigationProperty Name="CITYDISTRICT" Relationship="OnlineReservation.Web.FK_FIRMBRANCH_CITYDISTRICT" FromRole="FIRMBRANCH" ToRole="CITYDISTRICT" />
+    <NavigationProperty Name="FIRM" Relationship="OnlineReservation.Web.FK_FIRMBRANCH_FIRM" FromRole="FIRMBRANCH" ToRole="FIRM" />
+  </EntityType>
+  <EntityType Name="FIRMDEPARTMENT">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="FIRMID" Type="Guid" Nullable="false" />
+    <Property Name="FIRMBRANCHID" Type="Guid" />
+    <Property Name="NAME" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="FIRM" Relationship="OnlineReservation.Web.FK_FIRMDEPARTMENT_FIRM" FromRole="FIRMDEPARTMENT" ToRole="FIRM" />
+    <NavigationProperty Name="FIRMDEPARTMENTMEMBER" Relationship="OnlineReservation.Web.FK_FIRMDEPARTMENTMEMBER_FIRMDEPARTMENT" FromRole="FIRMDEPARTMENT" ToRole="FIRMDEPARTMENTMEMBER" />
+  </EntityType>
+  <EntityType Name="FIRMDEPARTMENTMEMBER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="FIRMDEPARTMENTID" Type="Guid" Nullable="false" />
+    <Property Name="MEMBERID" Type="Guid" Nullable="false" />
+    <Property Name="ISACTIVE" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="FIRMDEPARTMENT" Relationship="OnlineReservation.Web.FK_FIRMDEPARTMENTMEMBER_FIRMDEPARTMENT" FromRole="FIRMDEPARTMENTMEMBER" ToRole="FIRMDEPARTMENT" />
+    <NavigationProperty Name="MEMBER" Relationship="OnlineReservation.Web.FK_FIRMDEPARTMENTMEMBER_MEMBER" FromRole="FIRMDEPARTMENTMEMBER" ToRole="MEMBER" />
+    <NavigationProperty Name="RESERVATION" Relationship="OnlineReservation.Web.FK_RESERVATION_FIRMDEPARTMENTMEMBER" FromRole="FIRMDEPARTMENTMEMBER" ToRole="RESERVATION" />
+  </EntityType>
+  <EntityType Name="FIRMRESPONSIBLE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="FIRMID" Type="Guid" Nullable="false" />
+    <Property Name="MEMBERID" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="FIRM" Relationship="OnlineReservation.Web.FK_FIRMRESPONSIBLE_FIRM" FromRole="FIRMRESPONSIBLE" ToRole="FIRM" />
+    <NavigationProperty Name="MEMBER" Relationship="OnlineReservation.Web.FK_FIRMRESPONSIBLE_MEMBER" FromRole="FIRMRESPONSIBLE" ToRole="MEMBER" />
+  </EntityType>
+  <EntityType Name="MEMBER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="PASWORDRESETCODE" Type="Guid" />
+    <Property Name="TYPEMEMBERID" Type="Byte" Nullable="false" />
+    <Property Name="NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SURNAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FULLNAME" Type="String" Nullable="false" MaxLength="101" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="LOGINNAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PASWORD" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="GENDER" Type="Boolean" />
+    <Property Name="BIRDDATE" Type="DateTime" Precision="0" />
+    <Property Name="PHONE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CANLOGIN" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="FIRMDEPARTMENTMEMBER" Relationship="OnlineReservation.Web.FK_FIRMDEPARTMENTMEMBER_MEMBER" FromRole="MEMBER" ToRole="FIRMDEPARTMENTMEMBER" />
+    <NavigationProperty Name="FIRMRESPONSIBLE" Relationship="OnlineReservation.Web.FK_FIRMRESPONSIBLE_MEMBER" FromRole="MEMBER" ToRole="FIRMRESPONSIBLE" />
+    <NavigationProperty Name="TYPEMEMBER" Relationship="OnlineReservation.Web.FK_MEMBER_TYPEMEMBER" FromRole="MEMBER" ToRole="TYPEMEMBER" />
+  </EntityType>
+  <EntityType Name="RESERVATION">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="TYPERESERVATIONSTATUSID" Type="Byte" Nullable="false" />
+    <Property Name="FIRMDEPARTMENTMEMBERID" Type="Guid" Nullable="false" />
+    <Property Name="MEMBERID" Type="Guid" Nullable="false" />
+    <Property Name="DATE" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="FIRMDEPARTMENTMEMBER" Relationship="OnlineReservation.Web.FK_RESERVATION_FIRMDEPARTMENTMEMBER" FromRole="RESERVATION" ToRole="FIRMDEPARTMENTMEMBER" />
+    <NavigationProperty Name="TYPERESERVATIONSTATUS" Relationship="OnlineReservation.Web.FK_RESERVATION_TYPERESERVATIONSTATUS" FromRole="RESERVATION" ToRole="TYPERESERVATIONSTATUS" />
+  </EntityType>
+  <EntityType Name="TYPEMEMBER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Byte" Nullable="false" />
+    <Property Name="NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="MEMBER" Relationship="OnlineReservation.Web.FK_MEMBER_TYPEMEMBER" FromRole="TYPEMEMBER" ToRole="MEMBER" />
+  </EntityType>
+  <EntityType Name="TYPERESERVATIONSTATUS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Byte" Nullable="false" />
+    <Property Name="NAME" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="RESERVATION" Relationship="OnlineReservation.Web.FK_RESERVATION_TYPERESERVATIONSTATUS" FromRole="TYPERESERVATIONSTATUS" ToRole="RESERVATION" />
+  </EntityType>
+  <EntityType Name="TYPESEKTOR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Byte" Nullable="false" />
+    <Property Name="NAME" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="FIRM" Relationship="OnlineReservation.Web.FK_FIRM_TYPESEKTOR" FromRole="TYPESEKTOR" ToRole="FIRM" />
+  </EntityType>
+  <EntityType Name="VW_FIRM">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="TYPESEKTORID" />
+      <PropertyRef Name="NAME" />
+      <PropertyRef Name="TYPESEKTORNAME" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="TYPESEKTORID" Type="Byte" Nullable="false" />
+    <Property Name="NAME" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="DESCRIPTION" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CITYID" Type="Byte" />
+    <Property Name="CITYDISTRICTID" Type="Int16" />
+    <Property Name="ADRESS" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PHONE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MONDAYRESERVATIONDURATION" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="MONDAYSTARTDATE" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="MONDAYENDDATE" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="TUESDAYRESERVATIONDURATION" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="TUESDAYSTARTDATE" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="TUESDAYENDDATE" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="WEDNESDAYRESERVATIONDURATION" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="WEDNESDAYSTARTDATE" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="WEDNESDAYENDDATE" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="THURSDAYRESERVATIONDURATION" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="THURSDAYSTARTDATE" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="THURSDAYENDDATE" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="FRIDAYRESERVATIONDURATION" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="FRIDAYSTARTDATE" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="FRIDAYENDDATE" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="SATURDAYRESERVATIONDURATION" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="SATURDAYSTARTDATE" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="SATURDAYENDDATE" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="SUNDAYRESERVATIONDURATION" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="SUNDAYSTARTDATE" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="SUNDAYENDDATE" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="RESERVATIONDURATION" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="FIRMRESPONSIBLEID" Type="Guid" />
+    <Property Name="TYPESEKTORNAME" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CITYNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CITYDISTRICTNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="VW_FIRMBRANCH">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="FIRMID" />
+      <PropertyRef Name="NAME" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="FIRMID" Type="Guid" Nullable="false" />
+    <Property Name="NAME" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="CITYID" Type="Byte" />
+    <Property Name="CITYDISTRICTID" Type="Int16" />
+    <Property Name="ADRESS" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PHONE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FIRMNAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="CITYNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CITYDISTRICTNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="VW_FIRMDEPARTMENT">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="FIRMID" />
+      <PropertyRef Name="NAME" />
+      <PropertyRef Name="FIRMNAME" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="FIRMID" Type="Guid" Nullable="false" />
+    <Property Name="FIRMBRANCHID" Type="Guid" />
+    <Property Name="NAME" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FIRMNAME" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="FIRMBRANCHNAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="FIRMDEPARTMENTMEMBERCOUNT" Type="Int32" />
+  </EntityType>
+  <EntityType Name="VW_FIRMDEPARTMENTMEMBER">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="FIRMDEPARTMENTID" />
+      <PropertyRef Name="MEMBERID" />
+      <PropertyRef Name="ISACTIVE" />
+      <PropertyRef Name="NAME" />
+      <PropertyRef Name="SURNAME" />
+      <PropertyRef Name="FULLNAME" />
+      <PropertyRef Name="LOGINNAME" />
+      <PropertyRef Name="FIRMID" />
+      <PropertyRef Name="FIRMNAME" />
+      <PropertyRef Name="FIRMDEPARTMENTNAME" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="FIRMDEPARTMENTID" Type="Guid" Nullable="false" />
+    <Property Name="MEMBERID" Type="Guid" Nullable="false" />
+    <Property Name="ISACTIVE" Type="Boolean" Nullable="false" />
+    <Property Name="PHONE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SURNAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FULLNAME" Type="String" Nullable="false" MaxLength="101" FixedLength="false" Unicode="false" />
+    <Property Name="LOGINNAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GENDER" Type="Boolean" />
+    <Property Name="BIRDDATE" Type="DateTime" Precision="0" />
+    <Property Name="FIRMID" Type="Guid" Nullable="false" />
+    <Property Name="FIRMNAME" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="FIRMBRANCHID" Type="Guid" />
+    <Property Name="FIRMBRANCHNAME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="FIRMDEPARTMENTNAME" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="VW_FIRMRESPONSIBLE">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="FIRMID" />
+      <PropertyRef Name="MEMBERID" />
+      <PropertyRef Name="FIRMNAME" />
+      <PropertyRef Name="MEMBERFULLNAME" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="FIRMID" Type="Guid" Nullable="false" />
+    <Property Name="MEMBERID" Type="Guid" Nullable="false" />
+    <Property Name="FIRMNAME" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="MEMBERFULLNAME" Type="String" Nullable="false" MaxLength="101" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="VW_MEMBER">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="TYPEMEMBERID" />
+      <PropertyRef Name="NAME" />
+      <PropertyRef Name="SURNAME" />
+      <PropertyRef Name="FULLNAME" />
+      <PropertyRef Name="LOGINNAME" />
+      <PropertyRef Name="PASWORD" />
+      <PropertyRef Name="GENDER" />
+      <PropertyRef Name="CANLOGIN" />
+      <PropertyRef Name="TYPEMEMBERNAME" />
+      <PropertyRef Name="GENDERNAME" />
+    </Key>
+    <Property Name="ID" Type="Guid" Nullable="false" />
+    <Property Name="PASWORDRESETCODE" Type="Guid" />
+    <Property Name="TYPEMEMBERID" Type="Byte" Nullable="false" />
+    <Property Name="NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SURNAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FULLNAME" Type="String" Nullable="false" MaxLength="101" FixedLength="false" Unicode="false" />
+    <Property Name="LOGINNAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PASWORD" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="GENDER" Type="Boolean" Nullable="false" />
+    <Property Name="BIRDDATE" Type="DateTime" Precision="0" />
+    <Property Name="PHONE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CANLOGIN" Type="Boolean" Nullable="false" />
+    <Property Name="TYPEMEMBERNAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GENDERNAME" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_CITYDISTRICT_CITY">
+    <End Type="OnlineReservation.Web.CITY" Role="CITY" Multiplicity="1" />
+    <End Type="OnlineReservation.Web.CITYDISTRICT" Role="CITYDISTRICT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CITY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CITYDISTRICT">
+        <PropertyRef Name="CITYID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FIRM_CITY">
+    <End Type="OnlineReservation.Web.CITY" Role="CITY" Multiplicity="0..1" />
+    <End Type="OnlineReservation.Web.FIRM" Role="FIRM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CITY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FIRM">
+        <PropertyRef Name="CITYID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FIRMBRANCH_CITY">
+    <End Type="OnlineReservation.Web.CITY" Role="CITY" Multiplicity="0..1" />
+    <End Type="OnlineReservation.Web.FIRMBRANCH" Role="FIRMBRANCH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CITY">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FIRMBRANCH">
+        <PropertyRef Name="CITYID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FIRM_CITYDISTRICT">
+    <End Type="OnlineReservation.Web.CITYDISTRICT" Role="CITYDISTRICT" Multiplicity="0..1" />
+    <End Type="OnlineReservation.Web.FIRM" Role="FIRM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CITYDISTRICT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FIRM">
+        <PropertyRef Name="CITYDISTRICTID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FIRMBRANCH_CITYDISTRICT">
+    <End Type="OnlineReservation.Web.CITYDISTRICT" Role="CITYDISTRICT" Multiplicity="0..1" />
+    <End Type="OnlineReservation.Web.FIRMBRANCH" Role="FIRMBRANCH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CITYDISTRICT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FIRMBRANCH">
+        <PropertyRef Name="CITYDISTRICTID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FIRM_TYPESEKTOR">
+    <End Type="OnlineReservation.Web.TYPESEKTOR" Role="TYPESEKTOR" Multiplicity="1" />
+    <End Type="OnlineReservation.Web.FIRM" Role="FIRM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TYPESEKTOR">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FIRM">
+        <PropertyRef Name="TYPESEKTORID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FIRMBRANCH_FIRM">
+    <End Type="OnlineReservation.Web.FIRM" Role="FIRM" Multiplicity="1" />
+    <End Type="OnlineReservation.Web.FIRMBRANCH" Role="FIRMBRANCH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FIRM">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FIRMBRANCH">
+        <PropertyRef Name="FIRMID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FIRMDEPARTMENT_FIRM">
+    <End Type="OnlineReservation.Web.FIRM" Role="FIRM" Multiplicity="1" />
+    <End Type="OnlineReservation.Web.FIRMDEPARTMENT" Role="FIRMDEPARTMENT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FIRM">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FIRMDEPARTMENT">
+        <PropertyRef Name="FIRMID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FIRMRESPONSIBLE_FIRM">
+    <End Type="OnlineReservation.Web.FIRM" Role="FIRM" Multiplicity="1" />
+    <End Type="OnlineReservation.Web.FIRMRESPONSIBLE" Role="FIRMRESPONSIBLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FIRM">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FIRMRESPONSIBLE">
+        <PropertyRef Name="FIRMID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FIRMDEPARTMENTMEMBER_FIRMDEPARTMENT">
+    <End Type="OnlineReservation.Web.FIRMDEPARTMENT" Role="FIRMDEPARTMENT" Multiplicity="1" />
+    <End Type="OnlineReservation.Web.FIRMDEPARTMENTMEMBER" Role="FIRMDEPARTMENTMEMBER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FIRMDEPARTMENT">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FIRMDEPARTMENTMEMBER">
+        <PropertyRef Name="FIRMDEPARTMENTID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FIRMDEPARTMENTMEMBER_MEMBER">
+    <End Type="OnlineReservation.Web.MEMBER" Role="MEMBER" Multiplicity="1" />
+    <End Type="OnlineReservation.Web.FIRMDEPARTMENTMEMBER" Role="FIRMDEPARTMENTMEMBER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MEMBER">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FIRMDEPARTMENTMEMBER">
+        <PropertyRef Name="MEMBERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RESERVATION_FIRMDEPARTMENTMEMBER">
+    <End Type="OnlineReservation.Web.FIRMDEPARTMENTMEMBER" Role="FIRMDEPARTMENTMEMBER" Multiplicity="1" />
+    <End Type="OnlineReservation.Web.RESERVATION" Role="RESERVATION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FIRMDEPARTMENTMEMBER">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RESERVATION">
+        <PropertyRef Name="FIRMDEPARTMENTMEMBERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FIRMRESPONSIBLE_MEMBER">
+    <End Type="OnlineReservation.Web.MEMBER" Role="MEMBER" Multiplicity="1" />
+    <End Type="OnlineReservation.Web.FIRMRESPONSIBLE" Role="FIRMRESPONSIBLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MEMBER">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FIRMRESPONSIBLE">
+        <PropertyRef Name="MEMBERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MEMBER_TYPEMEMBER">
+    <End Type="OnlineReservation.Web.TYPEMEMBER" Role="TYPEMEMBER" Multiplicity="1" />
+    <End Type="OnlineReservation.Web.MEMBER" Role="MEMBER" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TYPEMEMBER">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MEMBER">
+        <PropertyRef Name="TYPEMEMBERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RESERVATION_TYPERESERVATIONSTATUS">
+    <End Type="OnlineReservation.Web.TYPERESERVATIONSTATUS" Role="TYPERESERVATIONSTATUS" Multiplicity="1" />
+    <End Type="OnlineReservation.Web.RESERVATION" Role="RESERVATION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TYPERESERVATIONSTATUS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="RESERVATION">
+        <PropertyRef Name="TYPERESERVATIONSTATUSID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

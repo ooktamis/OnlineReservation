@@ -1,0 +1,9 @@
+C:\Workspaces\OnlineReservation\OnlineReservation.Web\obj\Debug\OnlineReservation.Web.csprojResolveAssemblyReference.cache
+C:\Workspaces\OnlineReservation\OnlineReservation.Web\obj\Debug\OnlineReservation.Web.csproj.CoreCompileInputs.cache
+C:\Workspaces\OnlineReservation\OnlineReservation.Web\bin\OnlineReservation.Web.dll.config
+C:\Workspaces\OnlineReservation\OnlineReservation.Web\bin\OnlineReservation.Web.dll
+C:\Workspaces\OnlineReservation\OnlineReservation.Web\bin\OnlineReservation.Web.pdb
+C:\Workspaces\OnlineReservation\OnlineReservation.Web\bin\EntityFramework.dll
+C:\Workspaces\OnlineReservation\OnlineReservation.Web\bin\EntityFramework.xml
+C:\Workspaces\OnlineReservation\OnlineReservation.Web\obj\Debug\OnlineReservation.Web.dll
+C:\Workspaces\OnlineReservation\OnlineReservation.Web\obj\Debug\OnlineReservation.Web.pdb

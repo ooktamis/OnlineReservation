@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="OnlineReservationWebStoreContainer" CdmEntityContainer="novartz_stajyer1Entities">
+    <FunctionImportMapping FunctionImportName="SP_GetFirmDepartmentMemberReservationHour" FunctionName="OnlineReservation.Web.Store.SP_GetFirmDepartmentMemberReservationHour">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="OnlineReservation.Web.SP_GetFirmDepartmentMemberReservationHour_Result">
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="HASRESERVATION" ColumnName="HASRESERVATION" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="CITY">
+      <EntityTypeMapping TypeName="OnlineReservation.Web.CITY">
+        <MappingFragment StoreEntitySet="CITY">
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CITYDISTRICT">
+      <EntityTypeMapping TypeName="OnlineReservation.Web.CITYDISTRICT">
+        <MappingFragment StoreEntitySet="CITYDISTRICT">
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="CITYID" ColumnName="CITYID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FIRM">
+      <EntityTypeMapping TypeName="OnlineReservation.Web.FIRM">
+        <MappingFragment StoreEntitySet="FIRM">
+          <ScalarProperty Name="RESERVATIONDURATION" ColumnName="RESERVATIONDURATION" />
+          <ScalarProperty Name="SUNDAYENDDATE" ColumnName="SUNDAYENDDATE" />
+          <ScalarProperty Name="SUNDAYSTARTDATE" ColumnName="SUNDAYSTARTDATE" />
+          <ScalarProperty Name="SUNDAYRESERVATIONDURATION" ColumnName="SUNDAYRESERVATIONDURATION" />
+          <ScalarProperty Name="SATURDAYENDDATE" ColumnName="SATURDAYENDDATE" />
+          <ScalarProperty Name="SATURDAYSTARTDATE" ColumnName="SATURDAYSTARTDATE" />
+          <ScalarProperty Name="SATURDAYRESERVATIONDURATION" ColumnName="SATURDAYRESERVATIONDURATION" />
+          <ScalarProperty Name="FRIDAYENDDATE" ColumnName="FRIDAYENDDATE" />
+          <ScalarProperty Name="FRIDAYSTARTDATE" ColumnName="FRIDAYSTARTDATE" />
+          <ScalarProperty Name="FRIDAYRESERVATIONDURATION" ColumnName="FRIDAYRESERVATIONDURATION" />
+          <ScalarProperty Name="THURSDAYENDDATE" ColumnName="THURSDAYENDDATE" />
+          <ScalarProperty Name="THURSDAYSTARTDATE" ColumnName="THURSDAYSTARTDATE" />
+          <ScalarProperty Name="THURSDAYRESERVATIONDURATION" ColumnName="THURSDAYRESERVATIONDURATION" />
+          <ScalarProperty Name="WEDNESDAYENDDATE" ColumnName="WEDNESDAYENDDATE" />
+          <ScalarProperty Name="WEDNESDAYSTARTDATE" ColumnName="WEDNESDAYSTARTDATE" />
+          <ScalarProperty Name="WEDNESDAYRESERVATIONDURATION" ColumnName="WEDNESDAYRESERVATIONDURATION" />
+          <ScalarProperty Name="TUESDAYENDDATE" ColumnName="TUESDAYENDDATE" />
+          <ScalarProperty Name="TUESDAYSTARTDATE" ColumnName="TUESDAYSTARTDATE" />
+          <ScalarProperty Name="TUESDAYRESERVATIONDURATION" ColumnName="TUESDAYRESERVATIONDURATION" />
+          <ScalarProperty Name="MONDAYENDDATE" ColumnName="MONDAYENDDATE" />
+          <ScalarProperty Name="MONDAYSTARTDATE" ColumnName="MONDAYSTARTDATE" />
+          <ScalarProperty Name="MONDAYRESERVATIONDURATION" ColumnName="MONDAYRESERVATIONDURATION" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+          <ScalarProperty Name="ADRESS" ColumnName="ADRESS" />
+          <ScalarProperty Name="CITYDISTRICTID" ColumnName="CITYDISTRICTID" />
+          <ScalarProperty Name="CITYID" ColumnName="CITYID" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="TYPESEKTORID" ColumnName="TYPESEKTORID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FIRMBRANCH">
+      <EntityTypeMapping TypeName="OnlineReservation.Web.FIRMBRANCH">
+        <MappingFragment StoreEntitySet="FIRMBRANCH">
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+          <ScalarProperty Name="ADRESS" ColumnName="ADRESS" />
+          <ScalarProperty Name="CITYDISTRICTID" ColumnName="CITYDISTRICTID" />
+          <ScalarProperty Name="CITYID" ColumnName="CITYID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="FIRMID" ColumnName="FIRMID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FIRMDEPARTMENT">
+      <EntityTypeMapping TypeName="OnlineReservation.Web.FIRMDEPARTMENT">
+        <MappingFragment StoreEntitySet="FIRMDEPARTMENT">
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="FIRMBRANCHID" ColumnName="FIRMBRANCHID" />
+          <ScalarProperty Name="FIRMID" ColumnName="FIRMID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FIRMDEPARTMENTMEMBER">
+      <EntityTypeMapping TypeName="OnlineReservation.Web.FIRMDEPARTMENTMEMBER">
+        <MappingFragment StoreEntitySet="FIRMDEPARTMENTMEMBER">
+          <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+          <ScalarProperty Name="MEMBERID" ColumnName="MEMBERID" />
+          <ScalarProperty Name="FIRMDEPARTMENTID" ColumnName="FIRMDEPARTMENTID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FIRMRESPONSIBLE">
+      <EntityTypeMapping TypeName="OnlineReservation.Web.FIRMRESPONSIBLE">
+        <MappingFragment StoreEntitySet="FIRMRESPONSIBLE">
+          <ScalarProperty Name="MEMBERID" ColumnName="MEMBERID" />
+          <ScalarProperty Name="FIRMID" ColumnName="FIRMID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MEMBER">
+      <EntityTypeMapping TypeName="OnlineReservation.Web.MEMBER">
+        <MappingFragment StoreEntitySet="MEMBER">
+          <ScalarProperty Name="CANLOGIN" ColumnName="CANLOGIN" />
+          <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+          <ScalarProperty Name="BIRDDATE" ColumnName="BIRDDATE" />
+          <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+          <ScalarProperty Name="PASWORD" ColumnName="PASWORD" />
+          <ScalarProperty Name="LOGINNAME" ColumnName="LOGINNAME" />
+          <ScalarProperty Name="FULLNAME" ColumnName="FULLNAME" />
+          <ScalarProperty Name="SURNAME" ColumnName="SURNAME" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="TYPEMEMBERID" ColumnName="TYPEMEMBERID" />
+          <ScalarProperty Name="PASWORDRESETCODE" ColumnName="PASWORDRESETCODE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RESERVATION">
+      <EntityTypeMapping TypeName="OnlineReservation.Web.RESERVATION">
+        <MappingFragment StoreEntitySet="RESERVATION">
+          <ScalarProperty Name="DATE" ColumnName="DATE" />
+          <ScalarProperty Name="MEMBERID" ColumnName="MEMBERID" />
+          <ScalarProperty Name="FIRMDEPARTMENTMEMBERID" ColumnName="FIRMDEPARTMENTMEMBERID" />
+          <ScalarProperty Name="TYPERESERVATIONSTATUSID" ColumnName="TYPERESERVATIONSTATUSID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TYPEMEMBER">
+      <EntityTypeMapping TypeName="OnlineReservation.Web.TYPEMEMBER">
+        <MappingFragment StoreEntitySet="TYPEMEMBER">
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TYPERESERVATIONSTATUS">
+      <EntityTypeMapping TypeName="OnlineReservation.Web.TYPERESERVATIONSTATUS">
+        <MappingFragment StoreEntitySet="TYPERESERVATIONSTATUS">
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TYPESEKTOR">
+      <EntityTypeMapping TypeName="OnlineReservation.Web.TYPESEKTOR">
+        <MappingFragment StoreEntitySet="TYPESEKTOR">
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_FIRM">
+      <EntityTypeMapping TypeName="OnlineReservation.Web.VW_FIRM">
+        <MappingFragment StoreEntitySet="VW_FIRM">
+          <ScalarProperty Name="CITYDISTRICTNAME" ColumnName="CITYDISTRICTNAME" />
+          <ScalarProperty Name="CITYNAME" ColumnName="CITYNAME" />
+          <ScalarProperty Name="TYPESEKTORNAME" ColumnName="TYPESEKTORNAME" />
+          <ScalarProperty Name="FIRMRESPONSIBLEID" ColumnName="FIRMRESPONSIBLEID" />
+          <ScalarProperty Name="RESERVATIONDURATION" ColumnName="RESERVATIONDURATION" />
+          <ScalarProperty Name="SUNDAYENDDATE" ColumnName="SUNDAYENDDATE" />
+          <ScalarProperty Name="SUNDAYSTARTDATE" ColumnName="SUNDAYSTARTDATE" />
+          <ScalarProperty Name="SUNDAYRESERVATIONDURATION" ColumnName="SUNDAYRESERVATIONDURATION" />
+          <ScalarProperty Name="SATURDAYENDDATE" ColumnName="SATURDAYENDDATE" />
+          <ScalarProperty Name="SATURDAYSTARTDATE" ColumnName="SATURDAYSTARTDATE" />
+          <ScalarProperty Name="SATURDAYRESERVATIONDURATION" ColumnName="SATURDAYRESERVATIONDURATION" />
+          <ScalarProperty Name="FRIDAYENDDATE" ColumnName="FRIDAYENDDATE" />
+          <ScalarProperty Name="FRIDAYSTARTDATE" ColumnName="FRIDAYSTARTDATE" />
+          <ScalarProperty Name="FRIDAYRESERVATIONDURATION" ColumnName="FRIDAYRESERVATIONDURATION" />
+          <ScalarProperty Name="THURSDAYENDDATE" ColumnName="THURSDAYENDDATE" />
+          <ScalarProperty Name="THURSDAYSTARTDATE" ColumnName="THURSDAYSTARTDATE" />
+          <ScalarProperty Name="THURSDAYRESERVATIONDURATION" ColumnName="THURSDAYRESERVATIONDURATION" />
+          <ScalarProperty Name="WEDNESDAYENDDATE" ColumnName="WEDNESDAYENDDATE" />
+          <ScalarProperty Name="WEDNESDAYSTARTDATE" ColumnName="WEDNESDAYSTARTDATE" />
+          <ScalarProperty Name="WEDNESDAYRESERVATIONDURATION" ColumnName="WEDNESDAYRESERVATIONDURATION" />
+          <ScalarProperty Name="TUESDAYENDDATE" ColumnName="TUESDAYENDDATE" />
+          <ScalarProperty Name="TUESDAYSTARTDATE" ColumnName="TUESDAYSTARTDATE" />
+          <ScalarProperty Name="TUESDAYRESERVATIONDURATION" ColumnName="TUESDAYRESERVATIONDURATION" />
+          <ScalarProperty Name="MONDAYENDDATE" ColumnName="MONDAYENDDATE" />
+          <ScalarProperty Name="MONDAYSTARTDATE" ColumnName="MONDAYSTARTDATE" />
+          <ScalarProperty Name="MONDAYRESERVATIONDURATION" ColumnName="MONDAYRESERVATIONDURATION" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+          <ScalarProperty Name="ADRESS" ColumnName="ADRESS" />
+          <ScalarProperty Name="CITYDISTRICTID" ColumnName="CITYDISTRICTID" />
+          <ScalarProperty Name="CITYID" ColumnName="CITYID" />
+          <ScalarProperty Name="DESCRIPTION" ColumnName="DESCRIPTION" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="TYPESEKTORID" ColumnName="TYPESEKTORID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_FIRMBRANCH">
+      <EntityTypeMapping TypeName="OnlineReservation.Web.VW_FIRMBRANCH">
+        <MappingFragment StoreEntitySet="VW_FIRMBRANCH">
+          <ScalarProperty Name="CITYDISTRICTNAME" ColumnName="CITYDISTRICTNAME" />
+          <ScalarProperty Name="CITYNAME" ColumnName="CITYNAME" />
+          <ScalarProperty Name="FIRMNAME" ColumnName="FIRMNAME" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+          <ScalarProperty Name="ADRESS" ColumnName="ADRESS" />
+          <ScalarProperty Name="CITYDISTRICTID" ColumnName="CITYDISTRICTID" />
+          <ScalarProperty Name="CITYID" ColumnName="CITYID" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="FIRMID" ColumnName="FIRMID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_FIRMDEPARTMENT">
+      <EntityTypeMapping TypeName="OnlineReservation.Web.VW_FIRMDEPARTMENT">
+        <MappingFragment StoreEntitySet="VW_FIRMDEPARTMENT">
+          <ScalarProperty Name="FIRMDEPARTMENTMEMBERCOUNT" ColumnName="FIRMDEPARTMENTMEMBERCOUNT" />
+          <ScalarProperty Name="FIRMBRANCHNAME" ColumnName="FIRMBRANCHNAME" />
+          <ScalarProperty Name="FIRMNAME" ColumnName="FIRMNAME" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="FIRMBRANCHID" ColumnName="FIRMBRANCHID" />
+          <ScalarProperty Name="FIRMID" ColumnName="FIRMID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_FIRMDEPARTMENTMEMBER">
+      <EntityTypeMapping TypeName="OnlineReservation.Web.VW_FIRMDEPARTMENTMEMBER">
+        <MappingFragment StoreEntitySet="VW_FIRMDEPARTMENTMEMBER">
+          <ScalarProperty Name="FIRMDEPARTMENTNAME" ColumnName="FIRMDEPARTMENTNAME" />
+          <ScalarProperty Name="FIRMBRANCHNAME" ColumnName="FIRMBRANCHNAME" />
+          <ScalarProperty Name="FIRMBRANCHID" ColumnName="FIRMBRANCHID" />
+          <ScalarProperty Name="FIRMNAME" ColumnName="FIRMNAME" />
+          <ScalarProperty Name="FIRMID" ColumnName="FIRMID" />
+          <ScalarProperty Name="BIRDDATE" ColumnName="BIRDDATE" />
+          <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+          <ScalarProperty Name="LOGINNAME" ColumnName="LOGINNAME" />
+          <ScalarProperty Name="FULLNAME" ColumnName="FULLNAME" />
+          <ScalarProperty Name="SURNAME" ColumnName="SURNAME" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+          <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+          <ScalarProperty Name="MEMBERID" ColumnName="MEMBERID" />
+          <ScalarProperty Name="FIRMDEPARTMENTID" ColumnName="FIRMDEPARTMENTID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_FIRMRESPONSIBLE">
+      <EntityTypeMapping TypeName="OnlineReservation.Web.VW_FIRMRESPONSIBLE">
+        <MappingFragment StoreEntitySet="VW_FIRMRESPONSIBLE">
+          <ScalarProperty Name="MEMBERFULLNAME" ColumnName="MEMBERFULLNAME" />
+          <ScalarProperty Name="FIRMNAME" ColumnName="FIRMNAME" />
+          <ScalarProperty Name="MEMBERID" ColumnName="MEMBERID" />
+          <ScalarProperty Name="FIRMID" ColumnName="FIRMID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VW_MEMBER">
+      <EntityTypeMapping TypeName="OnlineReservation.Web.VW_MEMBER">
+        <MappingFragment StoreEntitySet="VW_MEMBER">
+          <ScalarProperty Name="GENDERNAME" ColumnName="GENDERNAME" />
+          <ScalarProperty Name="TYPEMEMBERNAME" ColumnName="TYPEMEMBERNAME" />
+          <ScalarProperty Name="CANLOGIN" ColumnName="CANLOGIN" />
+          <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+          <ScalarProperty Name="BIRDDATE" ColumnName="BIRDDATE" />
+          <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+          <ScalarProperty Name="PASWORD" ColumnName="PASWORD" />
+          <ScalarProperty Name="LOGINNAME" ColumnName="LOGINNAME" />
+          <ScalarProperty Name="FULLNAME" ColumnName="FULLNAME" />
+          <ScalarProperty Name="SURNAME" ColumnName="SURNAME" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="TYPEMEMBERID" ColumnName="TYPEMEMBERID" />
+          <ScalarProperty Name="PASWORDRESETCODE" ColumnName="PASWORDRESETCODE" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

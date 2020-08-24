@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cb700e46935b43d38cd65d0f315b7b0f" Name="Diagram1" ZoomLevel="46">
+        <EntityTypeShape EntityType="OnlineReservation.Web.CITY" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="OnlineReservation.Web.CITYDISTRICT" Width="1.5" PointX="3" PointY="4.625" />
+        <EntityTypeShape EntityType="OnlineReservation.Web.FIRM" Width="1.5" PointX="5.25" PointY="1.75" />
+        <EntityTypeShape EntityType="OnlineReservation.Web.FIRMBRANCH" Width="1.5" PointX="10.5" PointY="4.25" />
+        <EntityTypeShape EntityType="OnlineReservation.Web.FIRMDEPARTMENT" Width="1.5" PointX="7.5" PointY="11.25" />
+        <EntityTypeShape EntityType="OnlineReservation.Web.FIRMDEPARTMENTMEMBER" Width="1.5" PointX="9.75" PointY="11.25" />
+        <EntityTypeShape EntityType="OnlineReservation.Web.FIRMRESPONSIBLE" Width="1.5" PointX="7.5" PointY="4.75" />
+        <EntityTypeShape EntityType="OnlineReservation.Web.MEMBER" Width="1.5" PointX="5.25" PointY="10.75" />
+        <EntityTypeShape EntityType="OnlineReservation.Web.RESERVATION" Width="1.5" PointX="12" PointY="11.25" />
+        <EntityTypeShape EntityType="OnlineReservation.Web.TYPEMEMBER" Width="1.5" PointX="3" PointY="12" />
+        <EntityTypeShape EntityType="OnlineReservation.Web.TYPERESERVATIONSTATUS" Width="1.5" PointX="9.75" PointY="8.625" />
+        <EntityTypeShape EntityType="OnlineReservation.Web.TYPESEKTOR" Width="1.5" PointX="3" PointY="2" />
+        <EntityTypeShape EntityType="OnlineReservation.Web.VW_FIRM" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="OnlineReservation.Web.VW_FIRMBRANCH" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="OnlineReservation.Web.VW_FIRMDEPARTMENT" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="OnlineReservation.Web.VW_FIRMDEPARTMENTMEMBER" Width="1.5" PointX="14.75" PointY="0.75" />
+        <EntityTypeShape EntityType="OnlineReservation.Web.VW_FIRMRESPONSIBLE" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="OnlineReservation.Web.VW_MEMBER" Width="1.5" PointX="0.75" PointY="14.75" />
+        <AssociationConnector Association="OnlineReservation.Web.FK_CITYDISTRICT_CITY" />
+        <AssociationConnector Association="OnlineReservation.Web.FK_FIRM_CITY" />
+        <AssociationConnector Association="OnlineReservation.Web.FK_FIRMBRANCH_CITY" />
+        <AssociationConnector Association="OnlineReservation.Web.FK_FIRM_CITYDISTRICT" />
+        <AssociationConnector Association="OnlineReservation.Web.FK_FIRMBRANCH_CITYDISTRICT" />
+        <AssociationConnector Association="OnlineReservation.Web.FK_FIRM_TYPESEKTOR" />
+        <AssociationConnector Association="OnlineReservation.Web.FK_FIRMBRANCH_FIRM" />
+        <AssociationConnector Association="OnlineReservation.Web.FK_FIRMDEPARTMENT_FIRM" />
+        <AssociationConnector Association="OnlineReservation.Web.FK_FIRMRESPONSIBLE_FIRM" />
+        <AssociationConnector Association="OnlineReservation.Web.FK_FIRMDEPARTMENTMEMBER_FIRMDEPARTMENT" />
+        <AssociationConnector Association="OnlineReservation.Web.FK_FIRMDEPARTMENTMEMBER_MEMBER" />
+        <AssociationConnector Association="OnlineReservation.Web.FK_RESERVATION_FIRMDEPARTMENTMEMBER" />
+        <AssociationConnector Association="OnlineReservation.Web.FK_FIRMRESPONSIBLE_MEMBER" />
+        <AssociationConnector Association="OnlineReservation.Web.FK_MEMBER_TYPEMEMBER" />
+        <AssociationConnector Association="OnlineReservation.Web.FK_RESERVATION_TYPERESERVATIONSTATUS" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
